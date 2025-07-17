@@ -1,0 +1,5 @@
+MODEL_NAME = "xlm-roberta-base"
+MAX_LENGTH = 256
+BATCH_SIZE = 8
+NUM_EPOCHS = 3
+LEARNING_RATE = 2e-5
