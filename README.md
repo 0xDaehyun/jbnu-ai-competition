@@ -1,44 +1,62 @@
-# JBNU AI Competition
+# JBNU AI Competition 🤖
 
-본 저장소는 전북대학교에서 진행한 **AI 경진대회** 참가를 위한 프로젝트 코드 및 결과물을 정리한 공간입니다.
+본 저장소는 **전북대학교 AI 경진대회**에 참가해  
+생성형 AI와 사람이 작성한 텍스트를 구분하는  
+분류 모델을 개발한 코드 및 결과물을 정리한 공간입니다.
 
 ---
 
 ## 📌 대회 개요
 
-- **대회명**: JBNU AI Competition
-- **주제**: 생성형 AI와 사람이 작성한 텍스트 분류 모델 개발
-- **기간**: 2025.05 ~ 2025.06
-- **주최**: 전북대학교
+| 항목       | 내용                      |
+|------------|---------------------------|
+| **대회명** | JBNU AI Competition      |
+| **주제**   | 생성형 AI와 사람의 글 분류 |
+| **기간**   | 2025.05 ~ 2025.06        |
+| **주최**   | 전북대학교                 |
 
 ---
 
-## 🧠 문제 설명
+## 🧠 문제 정의
 
-사용자로부터 입력받은 텍스트가 **사람이 쓴 글인지**, **AI가 쓴 글인지** 분류하는 자연어 처리 모델을 개발합니다.
+주어진 텍스트를 입력받아, 작성자가 **사람인지**,  
+아니면 **생성형 AI인지**를 정확히 판별하는  
+자연어 처리(NLP) 모델을 구축하는 것이 목표입니다.
 
 ---
 
-## 🛠 기술 스택
+## 🚀 프로젝트 특징 및 접근 방법
 
-- Python 3.x
-- Transformers (Hugging Face)
-- PyTorch
-- scikit-learn
-- pandas, numpy
+- **XLM-RoBERTa 모델** 기반 Transformer 활용
+- HuggingFace의 **Trainer API**를 이용한 간편한 학습
+- 토큰화 및 패딩을 통한 균일한 입력 데이터 구성
+- Train/Test 데이터셋 분할로 안정적 검증 수행
+
+---
+
+## 🛠 사용 기술 스택
+
+| 기술                | 용도                    |
+|---------------------|-------------------------|
+| Python 3.x          | 전체 코드 구현          |
+| HuggingFace Transformers | NLP 모델 (XLM-RoBERTa) 활용 |
+| PyTorch             | 딥러닝 모델 및 학습 구현 |
+| scikit-learn        | 데이터 분할 및 평가      |
+| datasets            | HuggingFace 데이터 처리  |
+| pandas, numpy       | 데이터 처리 및 분석      |
+
+---
+
+## ⚙️ 하이퍼파라미터 설정 (config.py)
+
+| 파라미터명        | 값              |
+|-------------------|----------------|
+| MODEL_NAME        | xlm-roberta-base |
+| MAX_LENGTH        | 256             |
+| BATCH_SIZE        | 8               |
+| NUM_EPOCHS        | 3               |
+| LEARNING_RATE     | 2e-5            |
 
 ---
 
 ## 📂 프로젝트 구조
-
-```bash
-├── config.py                # 하이퍼파라미터 설정
-├── data_loader.py          # 데이터 로딩 및 전처리
-├── tokenizer.py            # 토크나이저 설정
-├── model.py                # 모델 정의
-├── train.py                # 학습 루프
-├── predict.py              # 추론 및 결과 저장
-├── submit.py               # 제출 파일 생성
-├── main.py                 # 전체 실행 파이프라인
-├── requirements.txt        # 의존 패키지 목록
-└── README.md               # 현재 문서
