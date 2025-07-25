@@ -75,9 +75,6 @@
 
 ---
 ## 🎯 결과 및 성과
-
-- Validation F1 Score: **0.97XX**  
-- Test       F1 Score: **0.97XX**  
 - Private Leaderboard: **38위**, F1 Score **0.9752**  
 - Public  Leaderboard: **44위**, F1 Score **0.9712**  
 
